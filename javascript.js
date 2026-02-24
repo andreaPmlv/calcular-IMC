@@ -6,7 +6,7 @@ function calcular() {
      const peso = parseFloat(pesoInput.value);
      const estaturaCm = parseFloat(estaturaInput.value);
  
-     if (isNaN(peso) || isNaN(estaturaCm) || peso < 3 || peso > 200 || estaturaCm < 30 || estaturaCm > 250) {
+     if (peso < 3 || peso > 200 || estaturaCm < 30 || estaturaCm > 250) {
     
      pesoInput.classList.add('border-red-500', 'ring-2', 'ring-red-500');
      estaturaInput.classList.add('border-red-500', 'ring-2', 'ring-red-500');
@@ -74,4 +74,12 @@ function limpiar() {
     btnAlimentos.addEventListener('click', () => {
     listaAlimentos.classList.toggle('hidden');
 });
-    
+    const formulario = document.getElementById('formulario-imc');
+    formulario.addEventListener('submit', function(event) {
+    event.preventDefault()
+    calcular();
+});
+   function calcular() {
+   const peso = parseFloat(document.getElementById('peso').value);
+   const estaturaCm = parseFloat(document.getElementById('estatura').value);
+   }
