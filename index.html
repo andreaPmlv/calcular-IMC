@@ -6,8 +6,8 @@
       <title>Calculadora de IMC</title>
       <script src="https://cdn.tailwindcss.com"></script>
       </head>
-      <body class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-100">
-      <div class="absolute inset-0 z-[-1] bg-cover bg-center scale-110 blur-sm" style="background-image: url('Diseño sin título.jpg');"></div>
+      <body class="min-h-screen flex items-center justify-center overflow-hidden bg-gray-100">
+      <div class="fixed inset-0 z-[-1] bg-cover bg-center scale-110 blur-sm" style="background-image: url('Diseño sin título.jpg');"></div>
 
       <div class="bg-white/70 backdrop-blur-md border border-white w-full max-w-md p-8 shadow-2xl rounded-3xl z-10 mx-4">
         
@@ -25,7 +25,9 @@
       <label class="block text-sm font-semibold text-gray-700 mb-1">Estatura (cm)</label>
                 <input type="number" id="estatura" placeholder="Ej: 170" class="w-full p-3 border border-gray-300 rounded-xl outline-none focus:ring-2 focus:ring-orange-500">
       </div>
-
+      <div id="mensaje-error" class="text-red-600 font-bold text-sm text-center hidden">
+       ¡Por favor, ingresa valores válidos!
+      </div>
       <div class="flex flex-col space-y-3 pt-4">
       <button onclick="calcular()" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 rounded-xl shadow-lg transition">
                   Calcular IMC
@@ -53,8 +55,24 @@
       <button onclick="volver()" class="w-full bg-slate-800 text-white py-3 rounded-xl font-bold">
                 Intentar de nuevo
       </button>
-      </div>
+      </div> <div class="mt-6 p-4 bg-orange-50 border-l-4 border-orange-500 rounded-r-xl">
+        <p class="text-sm text-green-800 italic">
+            "Recuerda que tu salud es tu mayor riqueza. Una alimentación balanceada y actividad física regular son la clave para una vida plena."
+        </p>
+    </div>
+      <button id="btn-alimentos" class="fixed bottom-5 right-5 bg-green-800 text-white p-2 rounded-full justify-center shadow-lg hover:bg-orange-600 transition-all z-50">
+    🍎 
+   </button>
 
-      </div> <script src="javascript.js"></script>
+      </div> <div id="lista-alimentos" class="hidden fixed bottom-20 right-5 bg-white p-4 rounded-xl shadow-2xl border border-gray-200 w-64 z-50">
+       <h3 class="font-bold text-orange-600 mb-2">Alimentos Saludables:</h3>
+      <ul class="text-sm text-gray-700 space-y-2">
+        <li>🥦 <b>Verduras:</b> Brócoli, espinacas.</li>
+        <li>🍎 <b>Frutas:</b> Manzanas, arándanos.</li>
+        <li>🥑 <b>Grasas:</b> Aguacate, nueces.</li>
+        <li>🍗 <b>Proteínas:</b> Pollo, lentejas.</li>
+    </ul>
+    </div>
+    </div> <script src="javascript.js"></script>
 </body>
 </html>
